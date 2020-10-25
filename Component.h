@@ -10,13 +10,7 @@ protected:
 public:
 	Component() {};
 	Component(string name) {
-		try {
-			this->CheckName(name);
-		}
-		catch (const char* msg) {
-			std::cout << msg << endl;
-		}
-		this->name=name;
+		this->name = name;
 	}
 	void SetParent(Component* parent) {
 		this->parent_ = parent;
@@ -27,7 +21,7 @@ public:
 	virtual void add(Component* component) {};
 	virtual void remove(Component* component) {};
 	virtual string getName() const = 0;
-	virtual void CheckName(string name) {};
+	virtual void Rename(string new_name) {};
 	virtual bool IsComposite() const {
 		return false;
 	};

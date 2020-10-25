@@ -1,7 +1,6 @@
 #include "Composite_fol.h"
 #include "Leaf_File.h"
 #include <iostream>
-
 void Composite_fol::add(Component* component)
 {
 	this->children_.push_back(component);
@@ -48,6 +47,7 @@ string Composite_fol::tree(int level,int comp)const
 
 void Composite_fol::ls()
 {
+	children_.sort();
 	for (const Component *c:children_) {
 		std::cout << c->getName() << endl;
 	}

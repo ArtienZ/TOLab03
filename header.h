@@ -6,4 +6,3 @@
 #include "Composite_fol.h"
 #include "Leaf_File.h"
 #include "Proxy.h"
-#include "RealComp.h"

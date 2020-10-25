@@ -1,23 +1,21 @@
 #pragma once
 #include "Component.h"
-#include "RealComp.h"
+#include "Leaf_File.h"
 #include <iostream>
 class Proxy:public Component
 {
-private:
-	RealComp* real;
+protected:
+	Component* real;
 public:
 	Proxy() {};
-	Proxy(RealComp* real_) :real(new RealComp(*real)) {
-		std::cout << "INIT" << endl;
+	Proxy(Component* real_) :real(real_) {
+		this->real->Rename(real_->getName());
 	}
-	virtual void CheckName(string name);
+	void Rename(string name);
 	string getName()const {
 		return this->name;
 	}
-	~Proxy(){
-		delete real;
-	}
+	~Proxy() {};
 	
 
 };

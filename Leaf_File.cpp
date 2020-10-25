@@ -9,6 +9,6 @@ string Leaf_File::getName() const
 
 void Leaf_File::more()
 {
-	std::cout << this->data;
+	std::cout << this->data << endl;
 }
 

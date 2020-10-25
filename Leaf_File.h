@@ -10,12 +10,12 @@ private:
 	string data;
 public:
 	Leaf_File() {};
-	Leaf_File(string file_name, string data) :Component(file_name) {
+	Leaf_File(string file_name, string data=" ") :Component(file_name) {
 		this->data = data;
 	};
 	string getName()const override;
-	virtual void CheckName(string n) {}
-	virtual void setName(string n) {};
+	void Rename(string name) { this->name = name; };
+	virtual void setName(string n) { this->name = n; };
 	bool isComposite() { return false; };
 	void more();
 	~Leaf_File() {};
